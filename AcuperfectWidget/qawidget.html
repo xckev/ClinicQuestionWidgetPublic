@@ -1,6 +1,6 @@
 <!--Web Widget SRC-->
 
-<div id='qa-container'>
+<div id='qa-container' style="position:fixed; top:100px">
   <h3>QA Widget</h3>	
   <div>
       <label for="question-input">Enter a question:</label><br>
@@ -25,6 +25,7 @@
           output.textContent = "<QUESTION ANSWER>";
           document.getElementById('qa-container').appendChild(output);
           question = "";
+          return false;
         }
       });
     </script>

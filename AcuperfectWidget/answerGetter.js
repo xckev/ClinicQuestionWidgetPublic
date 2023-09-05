@@ -1,6 +1,6 @@
-let questionForm = document.getElementById("questionForm");
+let submitBtn = document.getElementById("qa-submit");
 
-questionForm.addEventListener("submit", (e) => {
+submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   let question = document.getElementById("question-input");
@@ -10,9 +10,10 @@ questionForm.addEventListener("submit", (e) => {
   } else {
     // perform operation with form input
     let output = document.createElement("p");
-    
+
     output.textContent = "<QUESTION ANSWER>";
-    document.body.appendChild(output);
+    document.getElementById('qa-container').appendChild(output);
     question = "";
+    return false;
   }
 });
