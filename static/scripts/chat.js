@@ -29,14 +29,14 @@ function firstBotMessage() {
   document.getElementById("userInput").scrollIntoView(false);
 }
 firstBotMessage();
-
+/*
 function getHardResponse(userText) {
   let botResponse = getBotResponse(userText);
   let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
   $("#chatbox").append(botHtml);
 
   document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
+}*/
 
 function getResponse() {
   let userText = $("#textInput").val();
@@ -50,11 +50,26 @@ function getResponse() {
   $("#textInput").val("");
   $("#chatbox").append(userHtml);
   document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
+  
   setTimeout(() => {
-    getHardResponse(userText);
-  }, 1000)
+    let botResponse = getBotResponse(userText);
+    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+    $("#chatbox").append(botHtml);
 
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+  }, 1000)
+}
+
+function getBotResponse(input) {
+  if (input.toLowerCase() == "hello" || input.toLowerCase() == "hi") {
+    return "Hello there! I'm able to answer your questions about the clinic.";
+  }
+  else if (input.toLowerCase() == "goodbye" || input.toLowerCase() == "bye") {
+    return "Talk to you later!";
+  }
+  else {
+    return "Sorry, I couldnt quite understand. I'm only trained to answer questions regarding the clinic.";
+  }
 }
 
 function buttonSendText(sampleText) {
