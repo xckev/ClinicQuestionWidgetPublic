@@ -29,14 +29,6 @@ function firstBotMessage() {
   document.getElementById("userInput").scrollIntoView(false);
 }
 firstBotMessage();
-/*
-function getHardResponse(userText) {
-  let botResponse = getBotResponse(userText);
-  let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
-  $("#chatbox").append(botHtml);
-
-  document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}*/
 
 function getResponse() {
   let userText = $("#textInput").val();
