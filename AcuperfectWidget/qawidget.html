@@ -1,6 +1,6 @@
 <!--Web Widget SRC-->
 
-<div id='qa-container' style="position:fixed; top:100px">
+<div id='qa-container' style="position:fixed; bottom: 0px; right: 20px; background: #D3D3D3; padding: 20px; border-radius: 20px 20px 20px 20px;">
   <h3>QA Widget</h3>	
   <div>
       <label for="question-input">Enter a question:</label><br>
@@ -8,6 +8,7 @@
       <button id="qa-submit">
         Submit
       </button>
+      <p id="response">Answer Area</p>
     <script>
       let submitBtn = document.getElementById("qa-submit");
   
@@ -18,14 +19,14 @@
   
         if (question.value == "") {
           alert("Ensure you input a value!");
-        } else {
+        } 
+        else {
           // perform operation with form input
-          let output = document.createElement("p");
-      
-          output.textContent = "<QUESTION ANSWER>";
-          document.getElementById('qa-container').appendChild(output);
-          question = "";
-          return false;
+          let output = "QUESTION ANSWER";
+          document.getElementById("response").innerHTML = output;
+          console.log("here")
+          question = undefined;
+          //return false;
         }
       });
     </script>
